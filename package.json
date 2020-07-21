@@ -82,7 +82,7 @@
   "devDependencies": {
     "babel-plugin-istanbul": "2.0.3",
     "chai": "3.5.0",
-    "codecov": "2.3.0",
+    "codecov": "3.7.1",
     "dotenv": "2.0.0",
     "enzyme": "2.6.0",
     "eslint": "3.10.0",
