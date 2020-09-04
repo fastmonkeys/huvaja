@@ -44,7 +44,7 @@
     "moment-range": "2.2.0",
     "moment-timezone": "0.5.13",
     "morgan": "1.9.0",
-    "node-sass": "4.5.2",
+    "node-sass": "4.14.1",
     "normalizr": "2.2.1",
     "passport": "0.3.2",
     "passport-helsinki": "git://github.com/City-of-Helsinki/passport-helsinki.git",
