@@ -47,13 +47,13 @@ export function validate(values) {
       if (!begin.isBefore(end)) {
         errors.time = 'Alkamisajan on oltava ennen loppumisaikaa';
       } else {
-        const pattern = /^\d\d:[03]0$/;
+        const pattern = /^\d\d:\d[05]$/;
         const areTimesValid = (
           pattern.exec(values.time.begin.time) &&
           pattern.exec(values.time.end.time)
         );
         if (!areTimesValid) {
-          errors.time = 'Ajan on päätyttävä :00 tai :30';
+          errors.time = 'Minuutin on oltava jaollinen viidellä, esim. 00, 05, 10, 15 jne.';
         }
       }
     } else {

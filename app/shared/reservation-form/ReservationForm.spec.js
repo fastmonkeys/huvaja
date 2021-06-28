@@ -107,23 +107,24 @@ describe('shared/reservation-form/ReservationForm', () => {
         expect(error).to.equal('Alkamisajan on oltava ennen loppumisaikaa');
       });
 
+      const invalidMinutesMessage = 'Minuutin on oltava jaollinen viidellä, esim. 00, 05, 10, 15 jne.';
       it('has error when begin time has invalid minutes', () => {
-        const minutes = ['01', '05', '10', '20', '29', '31', '45', '50', '55', '59'];
+        const minutes = ['01', '06', '11', '24', '29', '31', '44', '51', '56', '59'];
         minutes.forEach((minute) => {
           const error = getError({
             begin: { date: '2016-01-01', time: `10:${minute}` },
           });
-          expect(error).to.equal('Ajan on päätyttävä :00 tai :30');
+          expect(error).to.equal(invalidMinutesMessage);
         });
       });
 
       it('has error when end time has invalid minutes', () => {
-        const minutes = ['01', '05', '10', '20', '29', '31', '45', '50', '55', '59'];
+        const minutes = ['01', '06', '11', '24', '29', '31', '44', '51', '56', '59'];
         minutes.forEach((minute) => {
           const error = getError({
             end: { date: '2016-01-01', time: `10:${minute}` },
           });
-          expect(error).to.equal('Ajan on päätyttävä :00 tai :30');
+          expect(error).to.equal(invalidMinutesMessage);
         });
       });
     });
